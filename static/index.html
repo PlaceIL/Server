@@ -56,33 +56,33 @@
         }
     </style>
 
-    <title>PlaceCZ Generál</title>
+    <title>PlaceIL Dashboard</title>
 </head>
 
 <body>
     <div class="card">
         <div class="card-body text-center">
             <h1 data-statistic="activeConnectionCount" class="odometer large-statistic">0</h1>
-            <h3>Aktivní připojení klienti</h3>
-            <h4>Položených pixelů: <span data-statistic="pixelsPlaced" class="odometer small-statistic">0</span></h4>
+            <h3>Active bots</h3>
+            <h4>Pixels placed: <span data-statistic="pixelsPlaced" class="odometer small-statistic">0</span></h4>
         </div>
     </div>
     
     <div class="card">
         <div class="card-body text-center">
             <img class="current-map" height="800px" style="border: 1px solid black;" />
-            <h3>Aktuální rozkaz <span class="italic">(<a href="/currentmap">PNG</a>, <a href="/currentorders">JSON</a>)</span></h3>
+            <h3>Current image <span class="italic">(<a href="/currentmap">PNG</a>, <a href="/currentorders">JSON</a>)</span></h3>
         </div>
     </div>
     <div class="card">
         <div class="card-body text-center">
-            <h3>Historie rozkazů</h3>
+            <h3>History</h3>
             <ul class="list-group list-group-flush map-history"></ul>
         </div>
     </div>
 
     <div id="control-hover">
-        <a href="/update.html" class="text-center text-decoration-none order-control italic">Order Control</a>
+        <a href="/update.html" class="text-center text-decoration-none order-control italic">Image Control</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
