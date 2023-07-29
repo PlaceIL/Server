@@ -159,9 +159,13 @@
             fetch('/api/map').then(async (res) => {
                 const data = await res.json();
 
-                document.querySelector('.current-map').src = `/maps/${data.currentMap}`;
-                mapWidth = document.querySelector('.map').clientWidth;
-                mapHeight = document.querySelector('.map').clientHeight;
+                const currentMap = document.querySelector('.current-map');
+                currentMap.src = `/maps/${data.currentMap}`;
+                currentMap.onload = function() {
+                    mapWidth = document.querySelector('.map').clientWidth;
+                    mapHeight = document.querySelector('.map').clientHeight;
+                };
+
                 document.querySelector('.map-history').innerHTML = data.mapHistory.map((item) => `<li class="list-group-item">
                     <img class="historic-map" src="/maps/${escapeHtml(item.file)}" loading="lazy" />
                     <br />
@@ -198,7 +202,7 @@
             mapWidth = document.querySelector('.map').clientWidth;
             mapHeight = document.querySelector('.map').clientHeight;
         });
-        
+
         updateStats();
         updateMap();
 
