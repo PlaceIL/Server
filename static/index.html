@@ -23,9 +23,9 @@
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
+            color: white;
         }
         h1, h3 {
-            color: white;
             filter: drop-shadow(2px 2px 3px #44d);
         }
         .heading {
@@ -158,7 +158,7 @@
                 document.querySelector('.map-history').innerHTML = data.mapHistory.map((item) => `<li class="list-group-item">
                     <img class="historic-map" src="/maps/${escapeHtml(item.file)}" loading="lazy" />
                     <br />
-                    ${new Date(item.date).toLocaleString('cs-CZ')}${item?.uploader ? " by " + item.uploader : ""}
+                    ${new Date(item.date).toLocaleString('en-US')}${item?.uploader ? " by " + item.uploader : ""}
                     <br />
                     ${escapeHtml(item?.reason || "No reason given")} <span class="italic">(<a href="/maps/${escapeHtml(item.file)}" target="_blank">PNG</a>)</span>
                 </li>`).join('');
