@@ -54,7 +54,11 @@
             background-color: rgba(192, 192, 192, 0.5);
         }
         .historic-map {
+            max-width: 60%;
             background-color: rgba(192, 192, 192, 0.5);
+        }
+        .list-group-item {
+            background-color: transparent;
         }
         #control-hover {
             position: fixed;
@@ -152,7 +156,7 @@
 
                 document.querySelector('.current-map').src = `/maps/${data.currentMap}`;
                 document.querySelector('.map-history').innerHTML = data.mapHistory.map((item) => `<li class="list-group-item">
-                    <img height="400px" class="historic-map" src="/maps/${escapeHtml(item.file)}" loading="lazy" />
+                    <img class="historic-map" src="/maps/${escapeHtml(item.file)}" loading="lazy" />
                     <br />
                     ${new Date(item.date).toLocaleString('cs-CZ')}${item?.uploader ? " by " + item.uploader : ""}
                     <br />
