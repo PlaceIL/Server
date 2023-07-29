@@ -33,6 +33,7 @@
             font-family: 'Stardos Stencil', cursive, sans-serif;
             background-image: linear-gradient(45deg, #0038b8, #fff);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             
         }
@@ -142,6 +143,9 @@
     <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
 
     <script>
+        let mapWidth = document.querySelector('.map').clientWidth;
+        let mapHeight = document.querySelector('.map').clientHeight;
+
         function updateStats() {
             fetch('/api/stats').then(async (res) => {
                 const data = await res.json();
@@ -156,6 +160,8 @@
                 const data = await res.json();
 
                 document.querySelector('.current-map').src = `/maps/${data.currentMap}`;
+                mapWidth = document.querySelector('.map').clientWidth;
+                mapHeight = document.querySelector('.map').clientHeight;
                 document.querySelector('.map-history').innerHTML = data.mapHistory.map((item) => `<li class="list-group-item">
                     <img class="historic-map" src="/maps/${escapeHtml(item.file)}" loading="lazy" />
                     <br />
@@ -184,9 +190,6 @@
             maxZoom: 30
         });
 
-        let mapWidth = document.querySelector('.map').clientWidth;
-        let mapHeight = document.querySelector('.map').clientHeight;
-
         instance.on('transform', function(e) {
             const transform = e.getTransform();  
             const xMove = Math.min(0, Math.max(transform.x, mapWidth * (1 - transform.scale)));
@@ -197,7 +200,6 @@
         window.addEventListener('resize', function () {
             mapWidth = document.querySelector('.map').clientWidth;
             mapHeight = document.querySelector('.map').clientHeight;
-            console.log("update", mapWidth, mapHeight);
         });
 
         setInterval(updateStats, 5000);
