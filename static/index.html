@@ -147,8 +147,6 @@
         }
 
         function updateMap() {
-            document.querySelector('.current-map').src = `/maps/1690103543600.png`;
-            return;
             fetch('/api/map').then(async (res) => {
                 const data = await res.json();
 
