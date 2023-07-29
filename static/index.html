@@ -181,9 +181,6 @@
                 .replace(/'/g, "&#039;");
         }
 
-        updateStats();
-        updateMap();
-
         const element = document.querySelector('.current-map');
         const instance = panzoom(element, {
             minZoom:  1,
@@ -201,6 +198,9 @@
             mapWidth = document.querySelector('.map').clientWidth;
             mapHeight = document.querySelector('.map').clientHeight;
         });
+        
+        updateStats();
+        updateMap();
 
         setInterval(updateStats, 5000);
         setInterval(updateMap, 30000);
