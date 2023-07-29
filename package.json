@@ -1,21 +1,21 @@
 {
   "name": "commando",
   "version": "1.0.0",
-  "description": "PlaceCZ Generál",
+  "description": "PlaceIL Command",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PlaceCZ/Server.git"
+    "url": "git+https://github.com/PlaceIL/Server.git"
   },
   "author": "NoahvdAa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PlaceCZ/Server/issues"
+    "url": "https://github.com/PlaceIL/Server/issues"
   },
-  "homepage": "https://github.com/PlaceCZ/Server#readme",
+  "homepage": "https://github.com/PlaceIL/Server#readme",
   "dependencies": {
     "express.js": "^1.0.0",
     "get-pixels": "^3.3.3",

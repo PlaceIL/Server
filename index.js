@@ -152,7 +152,7 @@ app.post('/updateorders', upload.single('image'), async (req, res) => {
 
         fs.writeFileSync(`${__dirname}/orders/${jsonFile}`, JSON.stringify(orders));
 
-        let reason = req.body?.reason || "Důvod neuveden";
+        let reason = req.body?.reason || "No reason given";
         let uploader = req.body?.uploader;
 
         appData.currentOrders = jsonFile;
